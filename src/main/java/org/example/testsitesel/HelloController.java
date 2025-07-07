@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -32,9 +33,9 @@ public class HelloController {
 
         List<SeleniumTestResult> results = new ArrayList<>();
 
-        System.setProperty("webdriver.chrome.driver", chromedriver);
-
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));

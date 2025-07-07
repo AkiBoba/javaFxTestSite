@@ -8,6 +8,7 @@ module org.example.testsitesel {
     requires org.seleniumhq.selenium.chrome_driver;
     requires dev.failsafe.core;
     requires org.slf4j;
+    requires io.github.bonigarcia.webdrivermanager;
 
     opens org.example.testsitesel to javafx.fxml;
     exports org.example.testsitesel;
